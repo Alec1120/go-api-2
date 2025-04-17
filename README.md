@@ -1,6 +1,9 @@
 # 🧠 Go Todo API 项目 - 2
+<div align="center">
 
 ![Go Test](https://github.com/Alec1120/go-api-2/actions/workflows/test.yml/badge.svg)
+
+</div>
 
 <div align="center">
 
