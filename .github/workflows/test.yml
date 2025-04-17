@@ -23,7 +23,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           docker run --rm go-api           \
-          -v "${{ github.workspace }}/coverage:/app/go-api/coverage"  \
+          -v "$(pwd)/coverage:/app/go-api/coverage"  \
           sh -c "make test-cover &&        \
           cp ./coverage.html ./coverage/ &&    \
           cp ./coverage.out ./coverage/ &&     \
@@ -32,5 +32,5 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
-          files: ./test/coverage.out
+          files: ./coverage/coverage.out
           token: ${{ secrets.CODECOV_TOKEN }}
