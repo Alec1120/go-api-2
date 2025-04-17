@@ -22,11 +22,14 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          docker run --rm go-api     \
-          sh -c "make test-cover && cp ./coverage.html ./test/ && cp ./coverage.out ./test/"
+          docker run --rm go-api sh -c     \
+          "make test-cover &&              \
+          cp ./coverage.html ./test/ &&    \
+          cp ./coverage.out ./test/ &&     \
+          go tool cover -func=./test/coverage.out"
       
       - name: Generate coverage report
-        run: go tool cover -func=./test/coverage.out
+        run: 
         
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
