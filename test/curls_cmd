@@ -1,0 +1,11 @@
+# This file is used to test the backend API using curl commands
+# You can run these commands in your terminal to test the API endpoints
+# Make sure the backend server is running before executing these commands
+
+curl -X GET http://localhost:8080/todos
+
+curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d "{\"task\":\"从容器写后端\", \"done\":false}"
+
+curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d "{\"task\":\"已完成任务\",\"done\":true}"
+
+curl -X DELETE http://localhost:8080/todos/1 
