@@ -26,7 +26,7 @@ jobs:
           sh -c "make test-cover && cp ./coverage.html ./test/ && cp ./coverage.out ./test/"
       
       - name: Generate coverage report
-        run: go tool cover -func=coverage.out
+        run: go tool cover -func=./test/coverage.out
         
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
